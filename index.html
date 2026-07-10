@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f5f4ed" />
+    <meta name="description" content="Mendel11 – eine kleine Betriebsanleitung für Wohnung, Katzen und Smart Home." />
+    <title>Mendel11</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#app">Zum Inhalt springen</a>
+
+    <div class="app-shell">
+      <header class="topbar">
+        <button class="brand" type="button" data-route="start" aria-label="Zur Startseite">
+          <span class="brand-mark" aria-hidden="true">M11</span>
+          <span>
+            <strong>Mendel11</strong>
+            <small>Wohnen · Katzen · Technik</small>
+          </span>
+        </button>
+        <button class="round-button" id="moreButton" type="button" aria-label="Weitere Seiten öffnen">
+          <span aria-hidden="true">•••</span>
+        </button>
+      </header>
+
+      <main id="app" tabindex="-1" aria-live="polite"></main>
+
+      <nav class="bottom-nav" aria-label="Hauptnavigation">
+        <button type="button" data-route="start" class="nav-item">
+          <span class="nav-icon" aria-hidden="true">⌂</span>
+          <span>Start</span>
+        </button>
+        <button type="button" data-route="katzen" class="nav-item">
+          <span class="nav-icon" aria-hidden="true">◖</span>
+          <span>Katzen</span>
+        </button>
+        <button type="button" data-route="wohnung" class="nav-item">
+          <span class="nav-icon" aria-hidden="true">▦</span>
+          <span>Wohnung</span>
+        </button>
+        <button type="button" data-route="hilfe" class="nav-item">
+          <span class="nav-icon" aria-hidden="true">＋</span>
+          <span>Hilfe</span>
+        </button>
+      </nav>
+    </div>
+
+    <dialog id="moreDialog" class="sheet-dialog">
+      <div class="sheet-handle" aria-hidden="true"></div>
+      <div class="sheet-header">
+        <div>
+          <p class="eyebrow">Weitere Seiten</p>
+          <h2>Was suchst du?</h2>
+        </div>
+        <button class="round-button" id="closeMore" type="button" aria-label="Menü schließen">×</button>
+      </div>
+      <div class="sheet-grid">
+        <button type="button" data-route="naehe" class="sheet-link">
+          <span aria-hidden="true">◎</span>
+          <strong>In der Nähe</strong>
+          <small>Einkaufen, Bäckerei, Essen</small>
+        </button>
+        <button type="button" data-route="abreise" class="sheet-link">
+          <span aria-hidden="true">↗</span>
+          <strong>Abreise</strong>
+          <small>Kurzer Abschluss-Check</small>
+        </button>
+        <button type="button" data-route="kaffee" class="sheet-link">
+          <span aria-hidden="true">☕</span>
+          <strong>Kaffee</strong>
+          <small>Bialetti oder Siebträger</small>
+        </button>
+        <button type="button" data-route="film" class="sheet-link">
+          <span aria-hidden="true">▷</span>
+          <strong>Film & Musik</strong>
+          <small>Denon, Beamer, Streaming</small>
+        </button>
+      </div>
+    </dialog>
+
+    <dialog id="roomDialog" class="room-dialog">
+      <button class="round-button room-close" id="closeRoom" type="button" aria-label="Raum schließen">×</button>
+      <div id="roomDialogContent"></div>
+    </dialog>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
