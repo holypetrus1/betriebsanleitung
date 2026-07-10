@@ -1,0 +1,135 @@
+/* Navigation v2: Die vier Dashboard-Hauptbereiche sind auch die vier festen Tabs. */
+.bottom-nav { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+/* Exakterer, aus dem Originalplan nachgezeichneter Grundriss. */
+.floorplan-card { padding: 0.8rem; }
+.floorplan-stage {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(23, 54, 58, 0.1);
+  border-radius: 24px;
+  background: #fbfaf4;
+}
+.floorplan-exact {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #fbfaf4;
+}
+.floor-room-hit { cursor: pointer; }
+.floor-room-fill {
+  transition: filter 180ms ease, opacity 180ms ease, transform 180ms ease;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.floor-room-hit:hover .floor-room-fill,
+.floor-room-hit:focus .floor-room-fill {
+  filter: saturate(1.08) brightness(0.98);
+  opacity: 0.88;
+  transform: scale(0.992);
+}
+.floor-room-hit:focus { outline: none; }
+.floor-room-hit:focus .floor-room-fill { stroke: var(--petrol); stroke-width: 6; }
+.floor-wall { stroke: #71401f; stroke-width: 16; stroke-linecap: square; stroke-linejoin: miter; fill: none; }
+.floor-opening { stroke: #fbfaf4; stroke-width: 20; stroke-linecap: butt; }
+.floor-door { stroke: #6e7774; stroke-width: 3; fill: none; }
+.floor-window { stroke: #8daab2; stroke-width: 6; stroke-linecap: round; }
+.floor-label { fill: #17363a; font-size: 28px; font-weight: 800; letter-spacing: -0.04em; pointer-events: none; }
+.floor-sub { fill: #60777a; font-size: 17px; font-weight: 650; pointer-events: none; }
+.floor-note {
+  margin: 0.75rem 0.35rem 0.2rem;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+/* Horizontale Kapitel-Navigation der Wohnungsseite. */
+.chapter-marquee-wrap {
+  position: sticky;
+  top: 4.55rem;
+  z-index: 16;
+  margin: 1rem -1rem 0;
+  padding: 0.55rem 1rem;
+  background: linear-gradient(to bottom, rgba(245,244,237,.98) 78%, rgba(245,244,237,.82));
+  backdrop-filter: blur(16px);
+}
+.chapter-marquee {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scrollbar-width: none;
+  scroll-snap-type: x proximity;
+}
+.chapter-marquee::-webkit-scrollbar { display: none; }
+.chapter-link {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  padding: 0.62rem 0.82rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255,254,249,.93);
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(40,66,69,.06);
+}
+.chapter-link:hover,
+.chapter-link:focus-visible { background: #e8f1ed; }
+
+.room-section {
+  scroll-margin-top: 9.3rem;
+  margin-top: 1rem;
+  padding: 1.15rem;
+  border: 1px solid rgba(23,54,58,.09);
+  border-radius: var(--radius-lg);
+  background: rgba(255,254,249,.94);
+  box-shadow: var(--shadow-soft);
+}
+.room-section:nth-of-type(odd) { background: rgba(239,246,241,.92); }
+.room-section-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.room-section-header h2 { margin: 0; font-size: 1.55rem; letter-spacing: -0.04em; }
+.room-section-header p { margin: 0.35rem 0 0; color: var(--ink-soft); font-size: 0.86rem; }
+.room-index {
+  display: grid;
+  min-width: 2.35rem;
+  aspect-ratio: 1;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--petrol);
+  color: white;
+  font-size: 0.76rem;
+  font-weight: 850;
+}
+.room-content-grid { display: grid; gap: 0.72rem; }
+.room-fact {
+  padding: 0.95rem;
+  border: 1px solid rgba(23,54,58,.08);
+  border-radius: 18px;
+  background: rgba(255,255,255,.72);
+}
+.room-fact h3 { margin: 0; font-size: 0.95rem; letter-spacing: -0.02em; }
+.room-fact p { margin: 0.38rem 0 0; color: var(--ink-soft); font-size: 0.86rem; line-height: 1.52; }
+.room-fact ul { margin: 0.55rem 0 0; padding-left: 1.15rem; color: var(--ink-soft); font-size: 0.86rem; line-height: 1.52; }
+.room-fact li + li { margin-top: 0.3rem; }
+.room-command { margin-top: 0.6rem; }
+
+.shared-home-section { margin-top: 1.5rem; }
+
+@media (min-width: 560px) {
+  .chapter-marquee-wrap { margin-inline: -1.35rem; padding-inline: 1.35rem; }
+  .room-content-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 860px) {
+  .chapter-marquee-wrap { margin-inline: -1.5rem; padding-inline: 1.5rem; top: 5rem; }
+  .floorplan-card { padding: 1rem; }
+  .floorplan-stage { max-width: 45rem; margin: 0 auto; }
+  .room-section { padding: 1.4rem; }
+}
