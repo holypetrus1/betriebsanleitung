@@ -1,0 +1,18 @@
+.sheet-dialog {
+  max-height: calc(100dvh - .5rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+@media (max-width: 420px) {
+  .skin-options { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .skin-choice {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: start;
+    min-height: 5.5rem;
+    padding: .65rem;
+  }
+  .skin-choice strong { font-size: .78rem; }
+  .skin-choice small { grid-column: auto; font-size: .68rem; }
+}
