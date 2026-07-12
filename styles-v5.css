@@ -1,0 +1,34 @@
+.nav-icon svg {
+  display: block;
+  width: 1.35rem;
+  height: 1.35rem;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.nav-icon .icon-fill {
+  fill: currentColor;
+  stroke: none;
+}
+
+.nav-item.active .nav-icon svg {
+  color: white;
+}
+
+.room-section-header:not(:has(.room-index)) {
+  justify-content: flex-start;
+}
+
+.room-command + .room-command {
+  margin-left: 0.35rem;
+}
+
+@media (max-width: 390px) {
+  .room-command + .room-command {
+    margin-left: 0;
+  }
+}
