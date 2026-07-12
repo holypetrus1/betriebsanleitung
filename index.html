@@ -6,8 +6,16 @@
     <meta name="theme-color" content="#f5f4ed" />
     <meta name="description" content="Mendel11 – eine kleine Betriebsanleitung für Wohnung, Katzen und Smart Home." />
     <title>Mendel11</title>
+    <script>
+      try {
+        document.documentElement.dataset.skin = localStorage.getItem('mendel11-skin') || 'classic';
+      } catch (error) {
+        document.documentElement.dataset.skin = 'classic';
+      }
+    </script>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="styles-v2.css" />
+    <link rel="stylesheet" href="styles-v3.css" />
   </head>
   <body>
     <a class="skip-link" href="#app">Zum Inhalt springen</a>
@@ -82,5 +90,6 @@
     </dialog>
 
     <script src="app.js" defer></script>
+    <script src="app-v3.js" defer></script>
   </body>
 </html>
