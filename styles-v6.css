@@ -1,0 +1,73 @@
+.inline-route-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 0.72rem;
+  padding: 0.62rem 0.78rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--petrol);
+  font-size: 0.8rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+.inline-route-link span { font-size: 1rem; }
+
+.menu-search {
+  margin-top: 1.25rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--line);
+}
+.search-label {
+  display: block;
+  margin-bottom: 0.55rem;
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+.search-field {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.72rem 0.82rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.76);
+}
+.search-field > span { color: var(--petrol); font-size: 1.15rem; }
+.search-field input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.88rem;
+}
+.search-field input::placeholder { color: var(--ink-soft); opacity: 0.8; }
+.search-results { display: grid; gap: 0.45rem; margin-top: 0.62rem; }
+.search-result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.72rem 0.78rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.62);
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+.search-result strong { font-size: 0.84rem; }
+.search-result small { color: var(--ink-soft); font-size: 0.72rem; }
+.search-hint { margin: 0; color: var(--ink-soft); font-size: 0.78rem; line-height: 1.45; }
+
+html[data-skin='dark'] .inline-route-link,
+html[data-skin='dark'] .search-field,
+html[data-skin='dark'] .search-result { background: rgba(25, 50, 55, 0.82); }
+html[data-skin='bright'] .inline-route-link,
+html[data-skin='bright'] .search-field,
+html[data-skin='bright'] .search-result { background: rgba(255, 255, 255, 0.82); }
